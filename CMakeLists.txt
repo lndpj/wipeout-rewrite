@@ -113,7 +113,7 @@ target_include_directories(wipeout PRIVATE src)
 target_include_directories(wipeout SYSTEM PRIVATE src/libs)
 target_compile_options(wipeout PRIVATE
 	$<$<CXX_COMPILER_ID:MSVC>:/W4>
-	$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra>
+	$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -Wno-unused-variable -Wno-unused-parameter>
 )
 target_compile_definitions(wipeout PRIVATE
 	$<$<BOOL:${PATH_ASSETS}>:-DPATH_ASSETS=${PATH_ASSETS}>
